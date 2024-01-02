@@ -31,92 +31,92 @@
 #include "Class.h"
 using namespace std;
 using namespace cocos2d;
-// î¿°í£ºÃØÊé»¤ÎÀ£¬Kda£¬Åó¿Ë£¬Ò«¹âÊ¹£¬¸ñ¶·¼Ò£¬ÎèÕß
-// 1ĞÇÆå×Ó£º6¸ö
-// ¿üÉ£Ìá£¬¿âÆæ£¬ËşÀï¿Ë£¬ÄÈÃÀ£¬¿­ÄÏ£¬ËşÄ·
-// 2ĞÇÆå×Ó£º6¸ö
+// ç¾ç»Šï¼šç§˜ä¹¦æŠ¤å«ï¼ŒKdaï¼Œæœ‹å…‹ï¼Œè€€å…‰ä½¿ï¼Œæ ¼æ–—å®¶ï¼Œèˆè€…
+// 1æ˜Ÿæ£‹å­ï¼š6ä¸ª
+// å¥æ¡‘æï¼Œåº“å¥‡ï¼Œå¡”é‡Œå…‹ï¼Œå¨œç¾ï¼Œå‡¯å—ï¼Œå¡”å§†
+// 2æ˜Ÿæ£‹å­ï¼š6ä¸ª
 // 
-// 3ĞÇÆå×Ó£º5¸ö
+// 3æ˜Ÿæ£‹å­ï¼š5ä¸ª
 // 
-// 4ĞÇÆå×Ó£º4¸ö
+// 4æ˜Ÿæ£‹å­ï¼š4ä¸ª
 // 
-// 5ĞÇÆå×Ó£º3¸ö
+// 5æ˜Ÿæ£‹å­ï¼š3ä¸ª
 // 
 
 
-//È«¾Ö±äÁ¿¶¨Òå´¦///////////////////////////////////////////////////////////////////////////////
-double time_all;//È«¾ÖÊ±¼ä²Î¿¼£¬ÓÃÓÚÈ·¶¨¹¥»÷ÆµÂÊ
+//å…¨å±€å˜é‡å®šä¹‰å¤„///////////////////////////////////////////////////////////////////////////////
+double time_all;//å…¨å±€æ—¶é—´å‚è€ƒï¼Œç”¨äºç¡®å®šæ”»å‡»é¢‘ç‡
 
-//Àà¶¨Òå²¿·Ö//////////////////////////////////////////////////////////////////////////////////
+//ç±»å®šä¹‰éƒ¨åˆ†//////////////////////////////////////////////////////////////////////////////////
 
 
-//Æå×ÓµÄÊµÏÖ²¿·Ö///////////////////////////////////////////////////////////////////////////////
+//æ£‹å­çš„å®ç°éƒ¨åˆ†///////////////////////////////////////////////////////////////////////////////
 //1
 class KuQi :public Hero 
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 1;
-	//¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	//æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 450;//ÑªÁ¿
-			defense_wuli = 15;//ÎïÀí·ÀÓù
-			defense_fashu = 15;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 48;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.7;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 15;//³õÊ¼·¨Á¦Öµ
-			mana_max = 60;//×î´ó·¨Á¦Öµ
+			blood = 450;//è¡€é‡
+			defense_wuli = 15;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 15;//é­”æ³•æŠ—æ€§
+			attack_wuli = 48;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.7;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 15;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 60;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 810;//ÑªÁ¿
-			defense_wuli = 15;//ÎïÀí·ÀÓù
-			defense_fashu = 15;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 63;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.7;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 15;//³õÊ¼·¨Á¦Öµ
-			mana_max = 60;//×î´ó·¨Á¦Öµ
+			blood = 810;//è¡€é‡
+			defense_wuli = 15;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 15;//é­”æ³•æŠ—æ€§
+			attack_wuli = 63;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.7;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 15;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 60;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 1458;//ÑªÁ¿
-			defense_wuli = 15;//ÎïÀí·ÀÓù
-			defense_fashu = 15;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 95;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.7;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 15;//³õÊ¼·¨Á¦Öµ
-			mana_max = 60;//×î´ó·¨Á¦Öµ
+			blood = 1458;//è¡€é‡
+			defense_wuli = 15;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 15;//é­”æ³•æŠ—æ€§
+			attack_wuli = 95;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.7;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 15;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 60;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero &Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero &Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		Hero.getdamage(134 + get_attack_wuli() - Hero.get_defense_wuli());
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -124,9 +124,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -136,56 +136,56 @@ public:
 class TaMu :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 2;
-	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 650;//ÑªÁ¿
-			defense_wuli = 35;//ÎïÀí·ÀÓù
-			defense_fashu = 35;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 60;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.55;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 0;//×î´ó·¨Á¦Öµ
+			blood = 650;//è¡€é‡
+			defense_wuli = 35;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 35;//é­”æ³•æŠ—æ€§
+			attack_wuli = 60;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.55;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 0;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1170;//ÑªÁ¿
-			defense_wuli = 35;//ÎïÀí·ÀÓù
-			defense_fashu = 35;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 90;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.55;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 0;//×î´ó·¨Á¦Öµ
+			blood = 1170;//è¡€é‡
+			defense_wuli = 35;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 35;//é­”æ³•æŠ—æ€§
+			attack_wuli = 90;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.55;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 0;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 2106;//ÑªÁ¿
-			defense_wuli = 35;//ÎïÀí·ÀÓù
-			defense_fashu = 35;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 135;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.55;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 0;//×î´ó·¨Á¦Öµ
+			blood = 2106;//è¡€é‡
+			defense_wuli = 35;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 35;//é­”æ³•æŠ—æ€§
+			attack_wuli = 135;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.55;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 0;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		;
 	}
@@ -195,13 +195,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -209,9 +209,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -221,68 +221,68 @@ public:
 class NaMei :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 3;
-	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 450;//ÑªÁ¿
-			defense_wuli = 15;//ÎïÀí·ÀÓù
-			defense_fashu = 15;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 40;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.75;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 15;//³õÊ¼·¨Á¦Öµ
-			mana_max = 75;//×î´ó·¨Á¦Öµ
+			blood = 450;//è¡€é‡
+			defense_wuli = 15;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 15;//é­”æ³•æŠ—æ€§
+			attack_wuli = 40;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.75;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 15;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 75;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 810;//ÑªÁ¿
-			defense_wuli = 15;//ÎïÀí·ÀÓù
-			defense_fashu = 15;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 60;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.75;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 15;//³õÊ¼·¨Á¦Öµ
-			mana_max = 75;//×î´ó·¨Á¦Öµ
+			blood = 810;//è¡€é‡
+			defense_wuli = 15;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 15;//é­”æ³•æŠ—æ€§
+			attack_wuli = 60;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.75;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 15;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 75;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 1458;//ÑªÁ¿
-			defense_wuli = 15;//ÎïÀí·ÀÓù
-			defense_fashu = 15;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 90;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.75;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 15;//³õÊ¼·¨Á¦Öµ
-			mana_max = 75;//×î´ó·¨Á¦Öµ
+			blood = 1458;//è¡€é‡
+			defense_wuli = 15;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 15;//é­”æ³•æŠ—æ€§
+			attack_wuli = 90;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.75;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 15;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 75;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		Hero.getdamage(300 * get_attack_fashu() / 100 - Hero.get_defense_fashu());
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -290,9 +290,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -304,56 +304,56 @@ public:
 class Gailun :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 4;
-	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 750;//ÑªÁ¿
-			defense_wuli = 45;//ÎïÀí·ÀÓù
-			defense_fashu = 45;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 55;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.7;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 40;//³õÊ¼·¨Á¦Öµ
-			mana_max = 90;//×î´ó·¨Á¦Öµ
+			blood = 750;//è¡€é‡
+			defense_wuli = 45;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 45;//é­”æ³•æŠ—æ€§
+			attack_wuli = 55;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.7;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 40;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 90;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1350;//ÑªÁ¿
-			defense_wuli = 45;//ÎïÀí·ÀÓù
-			defense_fashu = 45;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 83;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.7;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 40;//³õÊ¼·¨Á¦Öµ
-			mana_max = 90;//×î´ó·¨Á¦Öµ
+			blood = 1350;//è¡€é‡
+			defense_wuli = 45;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 45;//é­”æ³•æŠ—æ€§
+			attack_wuli = 83;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.7;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 40;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 90;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 2430;//ÑªÁ¿
-			defense_wuli = 45;//ÎïÀí·ÀÓù
-			defense_fashu = 45;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 124;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.7;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 40;//³õÊ¼·¨Á¦Öµ
-			mana_max = 90;//×î´ó·¨Á¦Öµ
+			blood = 2430;//è¡€é‡
+			defense_wuli = 45;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 45;//é­”æ³•æŠ—æ€§
+			attack_wuli = 124;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.7;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 40;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 90;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -373,13 +373,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -387,9 +387,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -399,56 +399,56 @@ public:
 class Jiakesi :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 5;
-	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 750;//ÑªÁ¿
-			defense_wuli = 35;//ÎïÀí·ÀÓù
-			defense_fashu = 35;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 55;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.85;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 50;//³õÊ¼·¨Á¦Öµ
-			mana_max = 120;//×î´ó·¨Á¦Öµ
+			blood = 750;//è¡€é‡
+			defense_wuli = 35;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 35;//é­”æ³•æŠ—æ€§
+			attack_wuli = 55;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.85;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 50;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 120;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1350;//ÑªÁ¿
-			defense_wuli = 35;//ÎïÀí·ÀÓù
-			defense_fashu = 35;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 83;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.85;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 50;//³õÊ¼·¨Á¦Öµ
-			mana_max = 120;//×î´ó·¨Á¦Öµ
+			blood = 1350;//è¡€é‡
+			defense_wuli = 35;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 35;//é­”æ³•æŠ—æ€§
+			attack_wuli = 83;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.85;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 50;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 120;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 2430;//ÑªÁ¿
-			defense_wuli = 35;//ÎïÀí·ÀÓù
-			defense_fashu = 35;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 124;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.85;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 50;//³õÊ¼·¨Á¦Öµ
-			mana_max = 120;//×î´ó·¨Á¦Öµ
+			blood = 2430;//è¡€é‡
+			defense_wuli = 35;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 35;//é­”æ³•æŠ—æ€§
+			attack_wuli = 124;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.85;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 50;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 120;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -471,13 +471,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -485,9 +485,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -497,56 +497,56 @@ public:
 class Gulajiasi :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 6;
-	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 750;//ÑªÁ¿
-			defense_wuli = 45;//ÎïÀí·ÀÓù
-			defense_fashu = 45;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 50;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.6;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 40;//³õÊ¼·¨Á¦Öµ
-			mana_max = 80;//×î´ó·¨Á¦Öµ
+			blood = 750;//è¡€é‡
+			defense_wuli = 45;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 45;//é­”æ³•æŠ—æ€§
+			attack_wuli = 50;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.6;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 40;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 80;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1350;//ÑªÁ¿
-			defense_wuli = 45;//ÎïÀí·ÀÓù
-			defense_fashu = 45;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 75;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.6;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 40;//³õÊ¼·¨Á¦Öµ
-			mana_max = 80;//×î´ó·¨Á¦Öµ
+			blood = 1350;//è¡€é‡
+			defense_wuli = 45;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 45;//é­”æ³•æŠ—æ€§
+			attack_wuli = 75;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.6;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 40;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 80;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 2430;//ÑªÁ¿
-			defense_wuli = 45;//ÎïÀí·ÀÓù
-			defense_fashu = 45;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 113;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.6;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 40;//³õÊ¼·¨Á¦Öµ
-			mana_max = 80;//×î´ó·¨Á¦Öµ
+			blood = 2430;//è¡€é‡
+			defense_wuli = 45;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 45;//é­”æ³•æŠ—æ€§
+			attack_wuli = 113;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.6;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 40;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 80;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -563,13 +563,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -577,9 +577,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -592,53 +592,53 @@ public:
 //class Modekaisa :public Hero
 //{
 //protected:
-//	int mana_begin;//³õÊ¼·¨Á¦Öµ
-//	int mana_max;//×î´ó·¨Á¦Öµ
+//	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+//	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 //	int grade;
 //public:
 //	int index = 7;
-//	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+//	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 //	void infm_initialize(int level)
 //	{
 //		grade = level;
 //		if (level == 1)
 //		{
-//			blood = 850;//ÑªÁ¿
-//			defense_wuli = 55;//ÎïÀí·ÀÓù
-//			defense_fashu = 55;//Ä§·¨¿¹ĞÔ
-//			attack_wuli = 60;//¹¥»÷Á¦
-//			attack_fashu = 100;//·¨Ç¿
-//			attack_speed = 0.65;//¹¥ËÙ
-//			attack_distance = 1;//¹¥»÷¾àÀë
-//			baoji_rate = 25;//±©»÷ÂÊ
-//			mana_begin = 70;//³õÊ¼·¨Á¦Öµ
-//			mana_max = 120;//×î´ó·¨Á¦Öµ
+//			blood = 850;//è¡€é‡
+//			defense_wuli = 55;//ç‰©ç†é˜²å¾¡
+//			defense_fashu = 55;//é­”æ³•æŠ—æ€§
+//			attack_wuli = 60;//æ”»å‡»åŠ›
+//			attack_fashu = 100;//æ³•å¼º
+//			attack_speed = 0.65;//æ”»é€Ÿ
+//			attack_distance = 1;//æ”»å‡»è·ç¦»
+//			baoji_rate = 25;//æš´å‡»ç‡
+//			mana_begin = 70;//åˆå§‹æ³•åŠ›å€¼
+//			mana_max = 120;//æœ€å¤§æ³•åŠ›å€¼
 //		}
 //		if (level == 2)
 //		{
-//			blood = 1530;//ÑªÁ¿
-//			defense_wuli = 55;//ÎïÀí·ÀÓù
-//			defense_fashu = 55;//Ä§·¨¿¹ĞÔ
-//			attack_wuli = 60;//¹¥»÷Á¦
-//			attack_fashu = 100;//·¨Ç¿
-//			attack_speed = 0.65;//¹¥ËÙ
-//			attack_distance = 1;//¹¥»÷¾àÀë
-//			baoji_rate = 25;//±©»÷ÂÊ
-//			mana_begin = 70;//³õÊ¼·¨Á¦Öµ
-//			mana_max = 120;//×î´ó·¨Á¦Öµ
+//			blood = 1530;//è¡€é‡
+//			defense_wuli = 55;//ç‰©ç†é˜²å¾¡
+//			defense_fashu = 55;//é­”æ³•æŠ—æ€§
+//			attack_wuli = 60;//æ”»å‡»åŠ›
+//			attack_fashu = 100;//æ³•å¼º
+//			attack_speed = 0.65;//æ”»é€Ÿ
+//			attack_distance = 1;//æ”»å‡»è·ç¦»
+//			baoji_rate = 25;//æš´å‡»ç‡
+//			mana_begin = 70;//åˆå§‹æ³•åŠ›å€¼
+//			mana_max = 120;//æœ€å¤§æ³•åŠ›å€¼
 //		}
 //		if (level == 3)
 //		{
-//			blood = 2754;//ÑªÁ¿
-//			defense_wuli = 55;//ÎïÀí·ÀÓù
-//			defense_fashu = 55;//Ä§·¨¿¹ĞÔ
-//			attack_wuli = 135;//¹¥»÷Á¦
-//			attack_fashu = 100;//·¨Ç¿
-//			attack_speed = 0.65;//¹¥ËÙ
-//			attack_distance = 1;//¹¥»÷¾àÀë
-//			baoji_rate = 25;//±©»÷ÂÊ
-//			mana_begin = 70;//³õÊ¼·¨Á¦Öµ
-//			mana_max = 120;//×î´ó·¨Á¦Öµ
+//			blood = 2754;//è¡€é‡
+//			defense_wuli = 55;//ç‰©ç†é˜²å¾¡
+//			defense_fashu = 55;//é­”æ³•æŠ—æ€§
+//			attack_wuli = 135;//æ”»å‡»åŠ›
+//			attack_fashu = 100;//æ³•å¼º
+//			attack_speed = 0.65;//æ”»é€Ÿ
+//			attack_distance = 1;//æ”»å‡»è·ç¦»
+//			baoji_rate = 25;//æš´å‡»ç‡
+//			mana_begin = 70;//åˆå§‹æ³•åŠ›å€¼
+//			mana_max = 120;//æœ€å¤§æ³•åŠ›å€¼
 //		}
 //	}
 //
@@ -647,58 +647,58 @@ public:
 class Shamila :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 
 	int judge_level = 0;
 public:
 	int index = 8;
-	//¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	//æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 600;//ÑªÁ¿
-			defense_wuli = 20;//ÎïÀí·ÀÓù
-			defense_fashu = 20;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 60;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.7;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 100;//×î´ó·¨Á¦Öµ
+			blood = 600;//è¡€é‡
+			defense_wuli = 20;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 20;//é­”æ³•æŠ—æ€§
+			attack_wuli = 60;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.7;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 100;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1080;//ÑªÁ¿
-			defense_wuli = 20;//ÎïÀí·ÀÓù
-			defense_fashu = 20;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 90;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.7;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 100;//×î´ó·¨Á¦Öµ
+			blood = 1080;//è¡€é‡
+			defense_wuli = 20;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 20;//é­”æ³•æŠ—æ€§
+			attack_wuli = 90;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.7;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 100;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 1944;//ÑªÁ¿
-			defense_wuli = 20;//ÎïÀí·ÀÓù
-			defense_fashu = 20;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 135;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.7;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 100;//×î´ó·¨Á¦Öµ
+			blood = 1944;//è¡€é‡
+			defense_wuli = 20;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 20;//é­”æ³•æŠ—æ€§
+			attack_wuli = 135;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.7;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 100;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -718,13 +718,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -732,9 +732,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 				judge_level++;
 			}
@@ -745,56 +745,56 @@ public:
 class Eyunxiaojie :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 9;
-	//¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	//æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 650;//ÑªÁ¿
-			defense_wuli = 20;//ÎïÀí·ÀÓù
-			defense_fashu = 20;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 60;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.75;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 60;//×î´ó·¨Á¦Öµ
+			blood = 650;//è¡€é‡
+			defense_wuli = 20;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 20;//é­”æ³•æŠ—æ€§
+			attack_wuli = 60;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.75;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 60;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1170;//ÑªÁ¿
-			defense_wuli = 20;//ÎïÀí·ÀÓù
-			defense_fashu = 20;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 90;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.75;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 60;//×î´ó·¨Á¦Öµ
+			blood = 1170;//è¡€é‡
+			defense_wuli = 20;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 20;//é­”æ³•æŠ—æ€§
+			attack_wuli = 90;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.75;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 60;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 2106;//ÑªÁ¿
-			defense_wuli = 20;//ÎïÀí·ÀÓù
-			defense_fashu = 20;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 124;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.75;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 60;//×î´ó·¨Á¦Öµ
+			blood = 2106;//è¡€é‡
+			defense_wuli = 20;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 20;//é­”æ³•æŠ—æ€§
+			attack_wuli = 124;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.75;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 60;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -811,13 +811,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -825,9 +825,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -838,56 +838,56 @@ public:
 //4
 class Ali : public Hero{
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 10;
-	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 700;//ÑªÁ¿
-			defense_wuli = 30;//ÎïÀí·ÀÓù
-			defense_fashu = 30;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 40;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.8;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 30;//×î´ó·¨Á¦Öµ
+			blood = 700;//è¡€é‡
+			defense_wuli = 30;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 30;//é­”æ³•æŠ—æ€§
+			attack_wuli = 40;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.8;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 30;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 810;//ÑªÁ¿
-			defense_wuli = 15;//ÎïÀí·ÀÓù
-			defense_fashu = 15;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 60;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.75;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 15;//³õÊ¼·¨Á¦Öµ
-			mana_max = 75;//×î´ó·¨Á¦Öµ
+			blood = 810;//è¡€é‡
+			defense_wuli = 15;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 15;//é­”æ³•æŠ—æ€§
+			attack_wuli = 60;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.75;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 15;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 75;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 1458;//ÑªÁ¿
-			defense_wuli = 15;//ÎïÀí·ÀÓù
-			defense_fashu = 15;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 90;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.75;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 15;//³õÊ¼·¨Á¦Öµ
-			mana_max = 75;//×î´ó·¨Á¦Öµ
+			blood = 1458;//è¡€é‡
+			defense_wuli = 15;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 15;//é­”æ³•æŠ—æ€§
+			attack_wuli = 90;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.75;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 15;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 75;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -932,13 +932,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -946,9 +946,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -958,56 +958,56 @@ public:
 class Kaitelin :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 11;
-	//¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	//æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 700;//ÑªÁ¿
-			defense_wuli = 30;//ÎïÀí·ÀÓù
-			defense_fashu = 30;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 70;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.8;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 90;//×î´ó·¨Á¦Öµ
+			blood = 700;//è¡€é‡
+			defense_wuli = 30;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 30;//é­”æ³•æŠ—æ€§
+			attack_wuli = 70;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.8;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 90;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1260;//ÑªÁ¿
-			defense_wuli = 30;//ÎïÀí·ÀÓù
-			defense_fashu = 30;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 105;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.8;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 90;//×î´ó·¨Á¦Öµ
+			blood = 1260;//è¡€é‡
+			defense_wuli = 30;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 30;//é­”æ³•æŠ—æ€§
+			attack_wuli = 105;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.8;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 90;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 2268;//ÑªÁ¿
-			defense_wuli = 30;//ÎïÀí·ÀÓù
-			defense_fashu = 30;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 158;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.8;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 90;//×î´ó·¨Á¦Öµ
+			blood = 2268;//è¡€é‡
+			defense_wuli = 30;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 30;//é­”æ³•æŠ—æ€§
+			attack_wuli = 158;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.8;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 90;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -1033,13 +1033,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -1047,9 +1047,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -1059,56 +1059,56 @@ public:
 class Bulici :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 12;
-	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 1000;//ÑªÁ¿
-			defense_wuli = 60;//ÎïÀí·ÀÓù
-			defense_fashu = 60;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 60;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.6;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 60;//³õÊ¼·¨Á¦Öµ
-			mana_max = 120;//×î´ó·¨Á¦Öµ
+			blood = 1000;//è¡€é‡
+			defense_wuli = 60;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 60;//é­”æ³•æŠ—æ€§
+			attack_wuli = 60;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.6;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 60;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 120;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1800;//ÑªÁ¿
-			defense_wuli = 60;//ÎïÀí·ÀÓù
-			defense_fashu = 60;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 90;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.6;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 60;//³õÊ¼·¨Á¦Öµ
-			mana_max = 120;//×î´ó·¨Á¦Öµ
+			blood = 1800;//è¡€é‡
+			defense_wuli = 60;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 60;//é­”æ³•æŠ—æ€§
+			attack_wuli = 90;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.6;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 60;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 120;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 3240;//ÑªÁ¿
-			defense_wuli = 60;//ÎïÀí·ÀÓù
-			defense_fashu = 60;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 135;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.6;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 60;//³õÊ¼·¨Á¦Öµ
-			mana_max = 120;//×î´ó·¨Á¦Öµ
+			blood = 3240;//è¡€é‡
+			defense_wuli = 60;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 60;//é­”æ³•æŠ—æ€§
+			attack_wuli = 135;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.6;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 60;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 120;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -1128,13 +1128,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -1142,9 +1142,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -1155,56 +1155,56 @@ public:
 class Qiyana :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 13;
-	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 1000;//ÑªÁ¿
-			defense_wuli = 60;//ÎïÀí·ÀÓù
-			defense_fashu = 60;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 75;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.9;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 40;//×î´ó·¨Á¦Öµ
+			blood = 1000;//è¡€é‡
+			defense_wuli = 60;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 60;//é­”æ³•æŠ—æ€§
+			attack_wuli = 75;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.9;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 40;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1900;//ÑªÁ¿
-			defense_wuli = 60;//ÎïÀí·ÀÓù
-			defense_fashu = 60;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 120;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.9;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 40;//×î´ó·¨Á¦Öµ
+			blood = 1900;//è¡€é‡
+			defense_wuli = 60;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 60;//é­”æ³•æŠ—æ€§
+			attack_wuli = 120;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.9;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 40;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 7500;//ÑªÁ¿
-			defense_wuli = 60;//ÎïÀí·ÀÓù
-			defense_fashu = 60;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 170;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.9;//¹¥ËÙ
-			attack_distance = 1;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-			mana_max = 40;//×î´ó·¨Á¦Öµ
+			blood = 7500;//è¡€é‡
+			defense_wuli = 60;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 60;//é­”æ³•æŠ—æ€§
+			attack_wuli = 170;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.9;//æ”»é€Ÿ
+			attack_distance = 1;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 40;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -1224,13 +1224,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else 
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -1238,9 +1238,9 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
@@ -1250,56 +1250,56 @@ public:
 class Zhadanren : public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 14;
-	// ¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	// æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize(int level)
 	{
 		grade = level;
 		if (level == 1)
 		{
-			blood = 800;//ÑªÁ¿
-			defense_wuli = 40;//ÎïÀí·ÀÓù
-			defense_fashu = 40;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 45;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.8;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 30;//³õÊ¼·¨Á¦Öµ
-			mana_max = 75;//×î´ó·¨Á¦Öµ
+			blood = 800;//è¡€é‡
+			defense_wuli = 40;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 40;//é­”æ³•æŠ—æ€§
+			attack_wuli = 45;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.8;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 30;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 75;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 2)
 		{
-			blood = 1440;//ÑªÁ¿
-			defense_wuli = 40;//ÎïÀí·ÀÓù
-			defense_fashu = 40;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 68;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.8;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 30;//³õÊ¼·¨Á¦Öµ
-			mana_max = 75;//×î´ó·¨Á¦Öµ
+			blood = 1440;//è¡€é‡
+			defense_wuli = 40;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 40;//é­”æ³•æŠ—æ€§
+			attack_wuli = 68;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.8;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 30;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 75;//æœ€å¤§æ³•åŠ›å€¼
 		}
 		if (level == 3)
 		{
-			blood = 2592;//ÑªÁ¿
-			defense_wuli = 40;//ÎïÀí·ÀÓù
-			defense_fashu = 40;//Ä§·¨¿¹ĞÔ
-			attack_wuli = 101;//¹¥»÷Á¦
-			attack_fashu = 100;//·¨Ç¿
-			attack_speed = 0.8;//¹¥ËÙ
-			attack_distance = 4;//¹¥»÷¾àÀë
-			baoji_rate = 25;//±©»÷ÂÊ
-			mana_begin = 30;//³õÊ¼·¨Á¦Öµ
-			mana_max = 75;//×î´ó·¨Á¦Öµ
+			blood = 2592;//è¡€é‡
+			defense_wuli = 40;//ç‰©ç†é˜²å¾¡
+			defense_fashu = 40;//é­”æ³•æŠ—æ€§
+			attack_wuli = 101;//æ”»å‡»åŠ›
+			attack_fashu = 100;//æ³•å¼º
+			attack_speed = 0.8;//æ”»é€Ÿ
+			attack_distance = 4;//æ”»å‡»è·ç¦»
+			baoji_rate = 25;//æš´å‡»ç‡
+			mana_begin = 30;//åˆå§‹æ³•åŠ›å€¼
+			mana_max = 75;//æœ€å¤§æ³•åŠ›å€¼
 		}
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		if (level == 1)
 		{
@@ -1317,13 +1317,13 @@ public:
 	}
 	void attack(Hero& Hero)
 	{
-		if (unable_to_attack == 0)
+		if (unable_to_attack != 0)
 		{
 			unable_to_attack--;
 		}
 		else
 		{
-			//¼¼ÄÜÅĞ¶¨
+			//æŠ€èƒ½åˆ¤å®š
 			if (mana_begin >= mana_max)
 			{
 				ability(grade, Hero);
@@ -1331,39 +1331,39 @@ public:
 			}
 			else
 			{
-				//ÆÕ¹¥»Ø¸´·¨Á¦Öµ
+				//æ™®æ”»å›å¤æ³•åŠ›å€¼
 				mana_begin += 10;
-				//Ôì³ÉÆÕ¹¥ÉËº¦
+				//é€ æˆæ™®æ”»ä¼¤å®³
 				Hero.getdamage(attack_wuli - Hero.get_defense_wuli());
 			}
 		}
 	}
 };
 
-//¿ÕÆå×Ó
+//ç©ºæ£‹å­
 class Null :public Hero
 {
 protected:
-	int mana_begin;//³õÊ¼·¨Á¦Öµ
-	int mana_max;//×î´ó·¨Á¦Öµ
+	int mana_begin;//åˆå§‹æ³•åŠ›å€¼
+	int mana_max;//æœ€å¤§æ³•åŠ›å€¼
 	int grade;
 public:
 	int index = 0;
-	//¸ù¾İĞÇ¼¶½øĞĞ³õÊ¼»¯
+	//æ ¹æ®æ˜Ÿçº§è¿›è¡Œåˆå§‹åŒ–
 	void infm_initialize()
 	{
-		blood = 0;//ÑªÁ¿
-		defense_wuli = 0;//ÎïÀí·ÀÓù
-		defense_fashu = 0;//Ä§·¨¿¹ĞÔ
-		attack_wuli = 0;//¹¥»÷Á¦
-		attack_fashu = 0;//·¨Ç¿
-		attack_speed = 0;//¹¥ËÙ
-		attack_distance = 0;//¹¥»÷¾àÀë
-		baoji_rate = 0;//±©»÷ÂÊ
-		mana_begin = 0;//³õÊ¼·¨Á¦Öµ
-		mana_max = 0;//×î´ó·¨Á¦Öµ
+		blood = 0;//è¡€é‡
+		defense_wuli = 0;//ç‰©ç†é˜²å¾¡
+		defense_fashu = 0;//é­”æ³•æŠ—æ€§
+		attack_wuli = 0;//æ”»å‡»åŠ›
+		attack_fashu = 0;//æ³•å¼º
+		attack_speed = 0;//æ”»é€Ÿ
+		attack_distance = 0;//æ”»å‡»è·ç¦»
+		baoji_rate = 0;//æš´å‡»ç‡
+		mana_begin = 0;//åˆå§‹æ³•åŠ›å€¼
+		mana_max = 0;//æœ€å¤§æ³•åŠ›å€¼
 	}
-	void ability(int level, Hero& Hero)//´«ÈëµÄ²ÎÊıÊÇ¼¼ÄÜµÈ¼¶ºÍÊÜµ½ÉËº¦µÄÄ¿±ê
+	void ability(int level, Hero& Hero)//ä¼ å…¥çš„å‚æ•°æ˜¯æŠ€èƒ½ç­‰çº§å’Œå—åˆ°ä¼¤å®³çš„ç›®æ ‡
 	{
 		;
 	}
@@ -1375,17 +1375,17 @@ public:
 
 
 
-//º¯Êı²¿·Ö////////////////////////////////////////////////////////////////////////////////////
+//å‡½æ•°éƒ¨åˆ†////////////////////////////////////////////////////////////////////////////////////
 
-//ÔËĞĞ²¿·Öº¯Êı
-//×¼±¸½×¶ÎÔËĞĞº¯Êı
+//è¿è¡Œéƒ¨åˆ†å‡½æ•°
+//å‡†å¤‡é˜¶æ®µè¿è¡Œå‡½æ•°
 //Board exe_run()
 //{
 //	Board me;
 //	
-//	//¼àÌıº¯Êı£¬±íÊ¾¹ºÂòÁËÒ»¸öÆå×ÓHero_x
+//	//ç›‘å¬å‡½æ•°ï¼Œè¡¨ç¤ºè´­ä¹°äº†ä¸€ä¸ªæ£‹å­Hero_x
 //	Hero Hero_x;
-//	//·ÅÈë±¸Õ½£¬ÅĞ¶ÏÊÇ·ñÈıÁ¬
+//	//æ”¾å…¥å¤‡æˆ˜ï¼Œåˆ¤æ–­æ˜¯å¦ä¸‰è¿
 //	if (!me.merge())
 //	{
 //		me.Herolist_beizhan.push_back(Hero_x);
@@ -1396,14 +1396,14 @@ public:
 //		me.levelup(Hero_x);
 //	}
 //
-//	//¼àÌıº¯Êı£¬±íÊ¾Âô³öÁËÒ»¸öÆå×ÓHero_y
+//	//ç›‘å¬å‡½æ•°ï¼Œè¡¨ç¤ºå–å‡ºäº†ä¸€ä¸ªæ£‹å­Hero_y
 //	Hero Hero_y;
-//	//Âô³öÆå×Ó
+//	//å–å‡ºæ£‹å­
 //	
 //
-//	//¼àÌıº¯Êı£¬±íÊ¾·ÅÖÃÁËÒ»¸öÆå×Óµ½Õ½³¡ÉÏ
+//	//ç›‘å¬å‡½æ•°ï¼Œè¡¨ç¤ºæ”¾ç½®äº†ä¸€ä¸ªæ£‹å­åˆ°æˆ˜åœºä¸Š
 //	Hero Hero_z;
-//	//·Åµ½Õ½³¡ÉÏ
+//	//æ”¾åˆ°æˆ˜åœºä¸Š
 //
 //
 //
@@ -1411,22 +1411,22 @@ public:
 //	return me;
 //}
 
-//¶ÔÕ½½×¶ÎÔËĞĞº¯Êı
-int exe_fight(Board board1, Board enemy)//ÔËĞĞ¶ÔÕ½³ÌĞò
+//å¯¹æˆ˜é˜¶æ®µè¿è¡Œå‡½æ•°
+int exe_fight(Board board1, Board enemy)//è¿è¡Œå¯¹æˆ˜ç¨‹åº
 {
-	// ½øÈëÑ­»·£º
-	//¿¼ÂÇ¹¥ËÙÎÊÌâ£¬Éè¶¨×îĞ¡Ê±¼äµ¥Î»0.01s,Ï£ÍûÊµÏÖÃ»¹ı0.01s½øĞĞÒ»´ÎÊı¾İµÄ´«ÈëºÍ´«³ö
-	const std::chrono::milliseconds loopDuration(100);  // 100 ºÁÃë = 0.1 Ãë
+	// è¿›å…¥å¾ªç¯ï¼š
+	//è€ƒè™‘æ”»é€Ÿé—®é¢˜ï¼Œè®¾å®šæœ€å°æ—¶é—´å•ä½0.01s,å¸Œæœ›å®ç°æ²¡è¿‡0.01sè¿›è¡Œä¸€æ¬¡æ•°æ®çš„ä¼ å…¥å’Œä¼ å‡º
+	const std::chrono::milliseconds loopDuration(100);  // 100 æ¯«ç§’ = 0.1 ç§’
 
 	while (true) {
 		auto startTime = std::chrono::steady_clock::now();
-		//È«¾ÖÊ±¼äÔö¼Ó
+		//å…¨å±€æ—¶é—´å¢åŠ 
 		time_all = time_all + 0.1;
-		// Ö´ĞĞÑ­»·º¯Êı
-		//¸üĞÂ¸÷¸ö¶ÔÏó
+		// æ‰§è¡Œå¾ªç¯å‡½æ•°
+		//æ›´æ–°å„ä¸ªå¯¹è±¡
 		board1.refresh();
 		board1.find(enemy);
-		//·Ö¶àÏß³ÌÖ´ĞĞ¹¥»÷²Ù×÷
+		//åˆ†å¤šçº¿ç¨‹æ‰§è¡Œæ”»å‡»æ“ä½œ
 		thread thread0(thread_action, board1.Herolist[0], board1.Herolist_object[0]);
 		thread thread1(thread_action, board1.Herolist[1], board1.Herolist_object[1]);
 		thread thread2(thread_action, board1.Herolist[2], board1.Herolist_object[2]);
@@ -1449,35 +1449,35 @@ int exe_fight(Board board1, Board enemy)//ÔËĞĞ¶ÔÕ½³ÌĞò
 		thread8.join();
 		thread9.join();
 
-		// ¼ÆËãÊµ¼ÊÖ´ĞĞÊ±¼ä
+		// è®¡ç®—å®é™…æ‰§è¡Œæ—¶é—´
 		auto endTime = std::chrono::steady_clock::now();
 		auto elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
 
-		// µÈ´ıÊ£ÓàµÄÊ±¼ä
+		// ç­‰å¾…å‰©ä½™çš„æ—¶é—´
 		auto remainingTime = loopDuration - elapsedTime;
 		if (remainingTime > std::chrono::milliseconds::zero()) {
 			std::this_thread::sleep_for(remainingTime);
 		}
 	}
 
-}//·µ»ØÊ¤ÀûÓë·ñ
+}//è¿”å›èƒœåˆ©ä¸å¦
 
 
 
-//Ïß³Ìº¯Êı
-//Ê×ÏÈÅĞ¶ÏÓ¢ĞÛ´æ²»´æÔÚ£¬´æÔÚ½øÈëÏÂÒ»²½
-//Èôµ±Ç°¹¥»÷·¶Î§ÄÚÓĞÓ¢ĞÛ£¬½øĞĞ¹¥»÷£»
-//ÈôÃ»ÓĞÓ¢ĞÛ£¬Ôò³¯¾àÀë×Ô¼º×î½üµÄ¶Ô·½Ó¢ĞÛ·½ÏòÒÆ¶¯Ò»²½¡ª¡ª¡ª¡ªÎÊÌâ£ºÒÆ¶¯ĞèÒªºÄ·ÑÊ±¼ä
+//çº¿ç¨‹å‡½æ•°
+//é¦–å…ˆåˆ¤æ–­è‹±é›„å­˜ä¸å­˜åœ¨ï¼Œå­˜åœ¨è¿›å…¥ä¸‹ä¸€æ­¥
+//è‹¥å½“å‰æ”»å‡»èŒƒå›´å†…æœ‰è‹±é›„ï¼Œè¿›è¡Œæ”»å‡»ï¼›
+//è‹¥æ²¡æœ‰è‹±é›„ï¼Œåˆ™æœè·ç¦»è‡ªå·±æœ€è¿‘çš„å¯¹æ–¹è‹±é›„æ–¹å‘ç§»åŠ¨ä¸€æ­¥â€”â€”â€”â€”é—®é¢˜ï¼šç§»åŠ¨éœ€è¦è€—è´¹æ—¶é—´
 void thread_action(Hero& Hero_my, Hero& Hero_enemy)
 {
 	
-	//Èô¡°ÎÒ·½Ó¢ĞÛ¡±ÕâÒ»Ïî²»´æÔÚ£¨´Ë´¦ÓÃ¹¥ËÙÎªÁã½øĞĞ±íÊ¾£©£¬²»½øĞĞ¹¥»÷
+	//è‹¥â€œæˆ‘æ–¹è‹±é›„â€è¿™ä¸€é¡¹ä¸å­˜åœ¨ï¼ˆæ­¤å¤„ç”¨æ”»é€Ÿä¸ºé›¶è¿›è¡Œè¡¨ç¤ºï¼‰ï¼Œä¸è¿›è¡Œæ”»å‡»
 	if (Hero_my.get_attack_speed() == 0)
 	{
 		return;
 	}
 
-	//ÈôµĞ·½Ó¢ĞÛ²»ÔÚ·¶Î§ÄÚ£¬ÒÆ¶¯
+	//è‹¥æ•Œæ–¹è‹±é›„ä¸åœ¨èŒƒå›´å†…ï¼Œç§»åŠ¨
 	int Distance = Hero_my.node.getPosition().distance(Hero_enemy.node.getPosition());
 	int Distance_base = Distance;
 	if (Distance > Hero_my.get_attack_distance() * 100)
@@ -1524,7 +1524,7 @@ void thread_action(Hero& Hero_my, Hero& Hero_enemy)
 	}
 	else 
 	{
-		//Èô´ËÊ±µÄÈ«¾ÖÊ±¼ä´ïµ½¹¥ËÙ¼ä¸ôµÄÕûÊı±¶£¬½øĞĞ¹¥»÷
+		//è‹¥æ­¤æ—¶çš„å…¨å±€æ—¶é—´è¾¾åˆ°æ”»é€Ÿé—´éš”çš„æ•´æ•°å€ï¼Œè¿›è¡Œæ”»å‡»
 		if (divide_double(time_all, Hero_my.get_attack_speed()))
 		{
 			Hero_my.attack(Hero_enemy);
@@ -1532,9 +1532,9 @@ void thread_action(Hero& Hero_my, Hero& Hero_enemy)
 	}
 }
 
-//¸¨Öúº¯Êı²¿·Ö
-//ÓÃÓÚ¼ÆËãÁ½¸öĞ¡ÊıÖ®¼äÄÜ²»ÄÜ±»Õû³ı£¬ÄÜ·µ»Øtrue£¬²»ÄÜ·µ»Øfalse
-//a´óbĞ¡
+//è¾…åŠ©å‡½æ•°éƒ¨åˆ†
+//ç”¨äºè®¡ç®—ä¸¤ä¸ªå°æ•°ä¹‹é—´èƒ½ä¸èƒ½è¢«æ•´é™¤ï¼Œèƒ½è¿”å›trueï¼Œä¸èƒ½è¿”å›false
+//aå¤§bå°
 bool divide_double(double a, double b)
 {
 	int num;
@@ -1559,7 +1559,7 @@ int exe_all(vector<Hero> Herolist1, vector<Hero> Herolist2)
 	Board me, enemy;
 	me.initialize(Herolist1);
 	enemy.initialize(Herolist2);
-	consequence = exe_fight(me, enemy);//ÔËĞĞÕ½¶·£¬»÷°ÜµĞ·½·µ»ØÕıÊı£¨±íÊ¾¶ÔµĞ·½Ôì³ÉµÄÉËº¦£©£¬·ñÔò·µ»Ø¸ºÊı£¨±íÊ¾ÊÜµ½µÄÉËº¦£©
+	consequence = exe_fight(me, enemy);//è¿è¡Œæˆ˜æ–—ï¼Œå‡»è´¥æ•Œæ–¹è¿”å›æ­£æ•°ï¼ˆè¡¨ç¤ºå¯¹æ•Œæ–¹é€ æˆçš„ä¼¤å®³ï¼‰ï¼Œå¦åˆ™è¿”å›è´Ÿæ•°ï¼ˆè¡¨ç¤ºå—åˆ°çš„ä¼¤å®³ï¼‰
 	return consequence;
 }
 
